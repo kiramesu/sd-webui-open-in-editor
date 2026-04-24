@@ -1,29 +1,29 @@
 onUiLoaded(function () {
     const addEditorButton = (tabId) => {
-        // すでにボタンがある場合の二重追加防止
+        // Prevent duplicate addition if the button already exists
         if (document.getElementById(`custom_editor_btn_${tabId}`)) return;
 
-        // 基準となる「📐（Extrasへ送る）」ボタンを探す
+        // Find the reference "📐 (Send to Extras)" button
         const extrasBtn = document.getElementById(`${tabId}_send_to_extras`);
-        if (!extrasBtn) return; // 見つからなければ処理を中断
+        if (!extrasBtn) return; // Abort if not found
 
-        // ペイントソフト起動用ボタンの作成
+        // Create the button to launch the paint software
         const btn = document.createElement('button');
         btn.id = `custom_editor_btn_${tabId}`;
         btn.innerHTML = '🖍'; 
-        btn.title = '外部ペイントソフトで開く';
+        btn.title = 'Open in external paint software';
 
-        // ★最重要ポイント: 📐ボタンと全く同じクラス（デザイン・サイズ設定）をコピーする
+        // ★Most important point: Copy the exact same class (design and size settings) as the 📐 button
         btn.className = extrasBtn.className;
 
-        // ボタンクリック時の処理
+        // Process when the button is clicked
         btn.addEventListener('click', () => {
             const gallery = document.getElementById(`${tabId}_gallery`);
             if (!gallery) return;
             
             const img = gallery.querySelector('img'); 
             if (!img || !img.src) {
-                alert("画像が見つかりません。");
+                alert("Image not found.");
                 return;
             }
 
@@ -35,18 +35,18 @@ onUiLoaded(function () {
             .then(res => res.json())
             .then(data => {
                 if (data.status === 'error') {
-                    alert("エラー: " + data.message);
+                    alert("Error: " + data.message);
                 }
             })
             .catch(err => console.error(err));
         });
 
-        // ★配置の変更: 📐ボタンの「直後」に挿入する
-        // これにより、同じグループ内で隣同士に綺麗に並びます
+        // ★Change in placement: Insert immediately after the 📐 button
+        // This ensures they are neatly aligned side by side within the same group
         extrasBtn.insertAdjacentElement('afterend', btn);
     };
 
-    // UI読み込み完了時に実行
+    // Execute after UI has finished loading
     addEditorButton('txt2img');
     addEditorButton('img2img');
 });
