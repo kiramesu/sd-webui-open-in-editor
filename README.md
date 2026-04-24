@@ -5,7 +5,7 @@ This extension allows you to send images generated in Stable Diffusion WebUI (AU
 1. Open the `Extensions` tab in the WebUI
 2. Open the `Install from URL` tab
 3. Enter the URL for this repository in the `URL for extension's git repository` field:
-   `https://github.com/あなたのユーザー名/sd-webui-open-in-editor`
+   `https://github.com/kiramesu/sd-webui-open-in-editor`
 4. Click the `Install` button
 5. In the `Installed` tab, click `Apply and restart UI`
 
