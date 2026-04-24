@@ -17,4 +17,3 @@ This extension allows you to send images generated in Stable Diffusion WebUI (AU
 
 3. Click the “🖍” button added below the gallery to instantly open the currently displayed image in the specified software.
 
-Translated with DeepL.com (free version)
