@@ -1,6 +1,8 @@
 # sd-webui-open-in-editor
 This extension allows you to send images generated in Stable Diffusion WebUI (AUTOMATIC1111) directly to external image editing software, such as Photoshop, with a single click.
-https://youtu.be/oKeBXXuY92o
+
+https://github.com/user-attachments/assets/b9ae0ba8-2de1-49c7-a846-495eaed63882
+
 ## Installation Instructions
 1. Open the `Extensions` tab in the WebUI
 2. Open the `Install from URL` tab
